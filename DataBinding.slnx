@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DataBinding.Collection/DataBinding.Collection.csproj" Id="4e7405de-0dd2-4d8b-8b42-2d4bf5ac0e4b" />
+  <Project Path="DataBinding.ElementoXaml/DataBinding.ElementoXaml.csproj" />
+</Solution>

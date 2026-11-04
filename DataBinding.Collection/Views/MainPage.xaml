@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace=DataBinding.Collection.Models"
+             x:Class="DataBinding.Collection.Views.MainPage"
+             Title="Demo DataBinding a una coleccion">
+
+    <Grid
+        RowDefinitions="Auto,*"
+        ColumnDefinitions="*"
+        Padding="24"
+        RowSpacing="8">
+
+        <Border>
+            <Grid
+                RowDefinitions="*"
+                ColumnDefinitions="Auto,*,Auto"
+                Padding="16"
+                ColumnSpacing="8">
+                <Label
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Nombre:"/>
+                <Entry
+                    TextColor="Black"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding Path=Nombre}"
+                    BackgroundColor="WhiteSmoke"/>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Command="{Binding Path=AddPersonCommand}"
+                    Text="Agregar"/>
+
+            </Grid>
+        </Border>
+        <CollectionView
+            Grid.Row="1"
+            Grid.Column="0"
+            BackgroundColor="LightGray"
+            ItemsSource="{Binding Path=Personas}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Stroke="Green"
+                        Margin="1"
+                        BackgroundColor="Green">
+                     <Label
+                        Text="{Binding Path=Nombre}"
+                        Padding="8,4"/>   
+                    </Border>
+                    
+                </DataTemplate>
+                              
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+        
+    </Grid>
+</ContentPage>
